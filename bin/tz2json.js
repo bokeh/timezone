@@ -147,7 +147,6 @@ for (name in info.zones) {
           date.setUTCHours(parseInt(match[1], 10));
           date.setUTCMinutes(parseInt(match[2], 10));
           date.setUTCSeconds(parseInt(match[3] || 0, 10));
-          console.log(date.toUTCString(), time, record.clock, match, date.getTime() / 1000);
         }
       }
       record.until = date.getTime() / 1000;
@@ -156,8 +155,7 @@ for (name in info.zones) {
     }
   }
 }
-/*
+
 process.stdout.write("module.exports = ");
 process.stdout.write(JSON.stringify(info, null, 2));
 process.stdout.write("\n");
-*/
