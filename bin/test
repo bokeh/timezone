@@ -13,14 +13,15 @@ if [ "$TRAVIS" = "true" ]; then
                     --slave   /usr/bin/ri ri /usr/bin/ri1.9.3 \
                     --slave   /usr/bin/irb irb /usr/bin/irb1.9.3
   sudo update-alternatives --set ruby /usr/bin/ruby1.9.3
-  PATH=/usr/local/gradle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-  PATH=/usr/local/gradle/bin:/home/vagrant/.nvm/v0.6.15/bin:./node_modules/.bin:$PATH
-  PATH=/home/vagrant/builds/bigeasy/timezone/node_modules/.bin:./node_modules/.bin:$PATH
-  PATH=/home/vagrant/.nvm/v0.6.15/lib/node_modules/npm/bin/node-gyp-bin:$PATH
-  export PATH
+ # PATH=/usr/local/gradle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+ # PATH=/usr/local/gradle/bin:/home/vagrant/.nvm/v0.6.15/bin:./node_modules/.bin:$PATH
+ # PATH=/home/vagrant/builds/bigeasy/timezone/node_modules/.bin:./node_modules/.bin:$PATH
+ # PATH=/home/vagrant/.nvm/v0.6.15/lib/node_modules/npm/bin/node-gyp-bin:$PATH
+ # export PATH
   ruby -v
 fi
 
+echo $PATH
 echo "HERE 1"
 proof
 echo "HERE 2"
