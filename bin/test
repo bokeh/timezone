@@ -21,4 +21,10 @@ if [ "$TRAVIS" = "true" ]; then
   ruby -v
 fi
 
+echo "HERE 1"
+proof
+echo "HERE 2"
+proof t/locale/*/*.t
+echo "HERE 3"
+
 proof t/*/*.t t/locale/*/*.t t/zones/*/*.t || exit 1
