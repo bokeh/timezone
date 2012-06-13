@@ -1,6 +1,8 @@
 #!/bin/bash
 
 if [ "$TRAVIS" = "true" ]; then
+  node -v
+
   (echo -e "\n\n\n" | sudo apt-add-repository ppa:brightbox/ruby-ng-experimental) >/dev/null 2>&1 && echo "brightbox added"
   sudo apt-get -q update >/dev/null 2>&1 && echo "apt-get update" 
   sudo apt-get -q install ruby rubygems ruby-switch >/dev/null 2>&1 && echo "apt-get install ruby rubygems ruby-switch"
