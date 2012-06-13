@@ -2,6 +2,8 @@
 
 if [ "$TRAVIS" = "true" ]; then
   node -v
+  echo $PATH
+  proof
 
   (echo -e "\n\n\n" | sudo apt-add-repository ppa:brightbox/ruby-ng-experimental) >/dev/null 2>&1 && echo "brightbox added"
   sudo apt-get -q update >/dev/null 2>&1 && echo "apt-get update" 
