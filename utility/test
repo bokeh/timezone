@@ -2,6 +2,7 @@
 
 echo $NODE_PATH
 ls .
+t/clock/now.t
 
 if [ "$TRAVIS" = "true" ]; then
   # Install a Ruby 1.9.3 for to get a `strftime` that understands `%::z`.
