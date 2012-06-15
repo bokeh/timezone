@@ -3,5 +3,5 @@
 node_modules/*
 *.swp
 zones/*
-timezones/*
+timezone/*
 iana/*
