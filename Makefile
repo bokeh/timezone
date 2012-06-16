@@ -1,5 +1,6 @@
-npm_copy_targets = timezone/rfc822.js timezone/package.json timezone/synopsis.js
+npm_copy_targets = timezone/rfc822.js timezone/package.json timezone/synopsis.js timezone/README
 
+copy_sources = $(npm_copy_targets:timezone/%=%) timezone.js slurp.js
 locale_sources = $(wildcard locales/*.js)
 locale_targets = $(locale_sources:locales/%=timezone/%)
 
@@ -10,7 +11,12 @@ olson_as_json = zones/olson/africa.js zones/olson/antarctica.js zones/olson/asia
 	zones/olson/europe.js zones/olson/northamerica.js zones/olson/southamerica.js
 olson = $(olson_as_json:zones/olson/%.js=zones/src/%)
 
+sources = $(locale_targets) $(copy_sources)
+
 all: zones/zoneinfo/America/Detroit $(npm_targets)
+
+watch: all
+	@inotifywait -q -m -e close_write $(sources) | while read line; do make --no-print-directory all; done;
 
 $(locale_targets): timezone/%: locales/%
 	mkdir -p timezone

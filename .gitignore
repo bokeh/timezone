@@ -5,3 +5,4 @@ node_modules/*
 zones/*
 timezone/*
 iana/*
+.proof.out
