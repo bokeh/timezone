@@ -1,3 +1,10 @@
+- Version 0.0.12
+
+ * Correctly format `%z` in UTC. #43.
+ * Implement UK English, French and German locales. #26.
+ * Convert Proof tests to JavaScript. #36.
+ * Timezone zones and locales in package root. #34. #33.
+
 - Version 0.0.11 - Thu Jun 14 18:04:39 UTC 2012
 
  * Correctly format `%_:z`. #40.
@@ -48,7 +55,7 @@
  * Correctly interpret rules that occur at the 24th hour; 24:00.
  * Correctly format `%Z`.
  * Use binary search against a generated table of rules.
- * Organize precompiler into a library and separate programs.
+ * Organize pre-compiler into a library and separate programs.
  * Create experimental 7-bit encoding and push it to the sidelines.
  * Redo intermediate zone file format, create clock property, offset in POSIX
    time.
