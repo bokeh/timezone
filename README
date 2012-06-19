@@ -30,5 +30,5 @@ under 3K minified and gzipped.
 
 HAKCING
 
-$ git clone --quiet git@github.com:bigeasy/timezone.git
+$ git clone --quiet https://github.com/bigeasy/timezone.git
 $ cd timezone && make && npm install && npm test
