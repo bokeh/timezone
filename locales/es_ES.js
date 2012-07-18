@@ -65,10 +65,7 @@ module.exports = {
       "diciembre"
     ]
   },
-  "meridiem": [
-    {},
-    {}
-  ],
+  "meridiem": [ "", "" ],
   "date": "%d/%m/%y",
   "time24": "%H:%M:%S",
   "dateTime": "%a %d %b %Y %H:%M:%S %Z"
