@@ -88,4 +88,5 @@ clean:
 	make -C eggert/tz -f Makefile clean
 
 build/Makefile.deps: $(zone_sources)
+	mkdir -p build
 	node util/tz2deps.js $^ > $@
