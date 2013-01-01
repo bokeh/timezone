@@ -20,29 +20,29 @@ if [ "$TRAVIS" = "true" ]; then
   rm -rf ~/.rvm
   ruby -v
   echo ""
-  utility/sizes timezone.js rfc822.js
+  util/sizes timezone.js rfc822.js
   echo ""
 fi
 
-ls -la timezone/index.js
+ls -la build/timezone/index.js
 
 echo ""
 
-(proof run t/*/*.t t/*/*/*.t | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
+(proof run t/*/*.t.* t/*/*/*.t.* | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
 
 if [ "$TRAVIS" = "true" ] || [ "$MINIFY" = "true" ]; then
   default=$(cat timezone.js | uglifyjs | gzip -c | wc -c)
   lift=$(cat timezone.js | uglifyjs --lift-vars | gzip -c | wc -c)
 
   if [ $default -lt $lift ]; then
-    cat timezone.js | uglifyjs > timezone/index.js
+    cat src/timezone.js | uglifyjs > build/timezone/index.js
   else
-    cat timezone.js | uglifyjs --lift-vars > timezone/index.js
+    cat src/timezone.js | uglifyjs --lift-vars > build/timezone/index.js
   fi 
  
-  ls -la timezone/index.js
+  ls -la build/timezone/index.js
 
   echo ""
 
-  (proof run t/*/*.t t/locale/*/*.t t/zones/timezone/*.t | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
+  (proof run t/*/*.t.* t/locale/*/*.t.* t/zones/timezone/*.t.* | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
 fi
