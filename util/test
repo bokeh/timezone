@@ -8,6 +8,7 @@ fi
 if [ "$TRAVIS" = "true" ]; then
   # Install a Ruby 1.9.3 for to get a `strftime` that understands `%::z`.
   ruby -v
+  sudo apt-get -q install bc >/dev/null 2>&1 && echo "apt-get install bc"
   which ruby
   echo ""
   (cd src && ../util/sizes timezone.js rfc822.js)
