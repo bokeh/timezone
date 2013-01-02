@@ -16,10 +16,11 @@ if [ "$TRAVIS" = "true" ]; then
                     --slave   /usr/bin/ri ri /usr/bin/ri1.9.3 \
                     --slave   /usr/bin/irb irb /usr/bin/irb1.9.3
   sudo update-alternatives --set ruby /usr/bin/ruby1.9.3
-  # Remove the RVM manged Ruby.
-  ls -la /home/travis/.rvm/gemsets/ruby
-  sudo rm -rf ~/.rvm
+  # Remove the RVM manged Ruby. One of the directories within the NVM
+  # installation shouldn't be, but is, owned by root, so we rename the directory
+  rvm use system
   ruby -v
+  which ruby
   echo ""
   (cd src && ../util/sizes timezone.js rfc822.js)
   echo ""
