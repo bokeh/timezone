@@ -1,16 +1,3 @@
-!function (definition) {
-  if (typeof module == "object" && module.exports) module.exports = definition();
-  else if (typeof define == "function") define(definition);
-  else this.tz = definition();
-} (function () {
-/*
-  function die () {
-    console.log.apply(console, __slice.call(arguments, 0));
-    return process.exit(1);
-  }
-
-  function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
-*/
   function actualize (entry, rule, year) {
     var actualized, date = rule.day[1];
 
@@ -344,5 +331,4 @@
     }
   }
 
-  return function () { return context.convert(arguments) };
-});
+  export default function () { return context.convert(arguments) };

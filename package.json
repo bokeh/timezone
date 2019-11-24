@@ -27,5 +27,7 @@
                         },
     "scripts" :         {
                             "test": "NODE_PATH=build util/test"
-                        }
+                        },
+    "module": "./src/timezone.js",
+    "types": "./src/timezone.d.ts"
 }
